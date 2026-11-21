@@ -1,0 +1,161 @@
+{
+ "task_id": "example-finance-01",
+ "niche": "personal finance and business",
+ "model": "openai/gpt-6.2-astra",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "Your traditional 401(k) could show $30,000, your Roth could show $20,400, and you could have the exact same amount to spend.\nHere's how.\nLet's say you're setting aside $10,000 of your pay, and those dollars fall in the 32% federal income tax bracket.\nGo Roth and you pay $3,200 in income tax today.\nThat leaves $6,800 to invest.\nSay it triples by the time you're 65 and you've had the Roth for more than five years.\nThat's $20,400 you can take out tax free.\nNow go traditional.\nYou invest the whole ten grand before income tax.\nSame investment, same growth, now you've got $30,000.\nLooks like traditional won, right?\nBut if you pull that money out at 32%, you're right back at $20,400.\nNow change just one thing.\nWhat if those withdrawals are taxed at 22% instead?\nNow you keep $23,400.\nThat's three grand more than the Roth from the exact same paycheck.\nSo here's what I'd ask before I check either box.\nWhat tax rate would I pay on this money today?\nAnd once I count things like a pension and my other taxable retirement income, what rate would I pay to pull this money out?\nIf I expect a lower rate in retirement, I'd lean traditional.\nIf I expect a higher rate, I'd lean Roth and pay the lower rate today.\nAnd if you're not sure, you can split your contributions if your plan offers both.\nIf you're looking to grow your net worth, follow me.",
+ "lines": [
+  "Your traditional 401(k) could show $30,000, your Roth could show $20,400, and you could have the exact same amount to spend.",
+  "Here's how.",
+  "Let's say you're setting aside $10,000 of your pay, and those dollars fall in the 32% federal income tax bracket.",
+  "Go Roth and you pay $3,200 in income tax today.",
+  "That leaves $6,800 to invest.",
+  "Say it triples by the time you're 65 and you've had the Roth for more than five years.",
+  "That's $20,400 you can take out tax free.",
+  "Now go traditional.",
+  "You invest the whole ten grand before income tax.",
+  "Same investment, same growth, now you've got $30,000.",
+  "Looks like traditional won, right?",
+  "But if you pull that money out at 32%, you're right back at $20,400.",
+  "Now change just one thing.",
+  "What if those withdrawals are taxed at 22% instead?",
+  "Now you keep $23,400.",
+  "That's three grand more than the Roth from the exact same paycheck.",
+  "So here's what I'd ask before I check either box.",
+  "What tax rate would I pay on this money today?",
+  "And once I count things like a pension and my other taxable retirement income, what rate would I pay to pull this money out?",
+  "If I expect a lower rate in retirement, I'd lean traditional.",
+  "If I expect a higher rate, I'd lean Roth and pay the lower rate today.",
+  "And if you're not sure, you can split your contributions if your plan offers both.",
+  "If you're looking to grow your net worth, follow me."
+ ],
+ "length": {
+  "words": 248,
+  "estimated_seconds": 73.4,
+  "target_seconds": [
+   60,
+   90
+  ],
+  "inside_target": true,
+  "lines": 23,
+  "words_per_line": 10.8,
+  "longest_line_words": 24
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://www.intentionallivingfp.com/insights/roth-vs-traditional-401k-high-earners",
+   "supports": "The $10,000 worked example at 32%: $6,800 invested in Roth versus $10,000 pre-tax; tripling produces equal spendable balances of $20,400 at the same rate, or $23,400 from traditional at a 22% withdrawal rate. Pensions and other taxable retirement income affect the rate on withdrawals.",
+   "opened": true
+  },
+  {
+   "url": "https://www.irs.gov/retirement-plans/roth-comparison-chart",
+   "supports": "Pre-tax versus after-tax contributions, taxation of traditional withdrawals, the age and five-year conditions for qualified tax-free Roth withdrawals, and the option to split contributions.",
+   "opened": true
+  },
+  {
+   "url": "https://www.troweprice.com/personal-investing/resources/insights/what-you-need-know-deciding-between-roth-and-traditional.html",
+   "supports": "Comparing current and expected retirement marginal rates: lower later favors traditional, higher later favors Roth, and splitting contributions is an option when future rates are uncertain.",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Roth traditional 401k equal take home pay marginal tax rate same example retirement tax bracket contributions Fidelity 1000 22%\" }",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\":\"site:irs.gov designated Roth 401k traditional pre-tax contributions taxable retirement five taxable years age 59 1/2 can contribute both\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\":\"traditional roth 401k same tax rate mathematical example taxed at withdrawal marginal rate next dollar retirement pension taxable income choosing Roth traditional Vanguard\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.irs.gov/retirement-plans/roth-comparison-chart\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.troweprice.com/personal-investing/resources/insights/what-you-need-know-deciding-between-roth-and-traditional.html\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.fidelity.com/viewpoints/retirement/spender-or-saver\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.bogleheads.org/wiki/Traditional_versus_Roth\"}",
+   "ok": false,
+   "error": "the site answered with HTTP 403"
+  },
+  {
+   "n": 8,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Roth traditional 401(k) \\\"$1,560\\\" \\\"$780\\\" doubles \\\"$2,000\\\" tax example\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Roth traditional 401k \\\"$1,520\\\" \\\"$760\\\" doubles retirement tax 24% $1,000 example\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Roth traditional 401k if same tax rate money doubles example $1000 $800 $2000 $1600 same after tax retirement doubled tax rate tax bracket\"}",
+   "ok": true
+  },
+  {
+   "n": 11,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.intentionallivingfp.com/insights/roth-vs-traditional-401k-high-earners\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://alignfinancialsolutions.com/roth-vs-traditional-401k/\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 12,
+ "model_requests": 5,
+ "usage": {
+  "prompt_tokens": 55812,
+  "completion_tokens": 1481,
+  "reasoning_tokens": 413,
+  "cost": 0.278451
+ },
+ "seconds_taken": 123.2
+}

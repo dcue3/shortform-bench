@@ -1,0 +1,109 @@
+{
+ "task_id": "example-tech-01",
+ "niche": "technology and AI",
+ "model": "moonshotai/kimi-k3.1-pro",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "These humanoids learn to walk before touching the real world.\nAnd the crazy part is, years of practice take just a few hours.\nThis is Figure's training ground for Figure 02.\nInside one physics simulator, thousands of virtual robots learn at once.\nIt's like a video game with infinite lives, except the high score is walking.\nThe AI tries a movement, gets rewarded for copying a human gait, then adjusts and tries again.\nBut here's the hardest part.\nA simulated robot only approximates a real one.\nSo Figure makes the simulation messy.\nEvery robot gets different physical properties and faces changing terrain, slips and shoves.\nThe AI can't memorize one perfect world.\nIt has to learn walking that works outside it.\nAnd it works.\nThe same controller transferred to real robots with no extra tuning.\nFigure even ran it on 10 robots with zero changes.\nSoon, a robot's first real step could have years of practice behind it.\nFollow for more tech, AI and robotics stories.",
+ "lines": [
+  "These humanoids learn to walk before touching the real world.",
+  "And the crazy part is, years of practice take just a few hours.",
+  "This is Figure's training ground for Figure 02.",
+  "Inside one physics simulator, thousands of virtual robots learn at once.",
+  "It's like a video game with infinite lives, except the high score is walking.",
+  "The AI tries a movement, gets rewarded for copying a human gait, then adjusts and tries again.",
+  "But here's the hardest part.",
+  "A simulated robot only approximates a real one.",
+  "So Figure makes the simulation messy.",
+  "Every robot gets different physical properties and faces changing terrain, slips and shoves.",
+  "The AI can't memorize one perfect world.",
+  "It has to learn walking that works outside it.",
+  "And it works.",
+  "The same controller transferred to real robots with no extra tuning.",
+  "Figure even ran it on 10 robots with zero changes.",
+  "Soon, a robot's first real step could have years of practice behind it.",
+  "Follow for more tech, AI and robotics stories."
+ ],
+ "length": {
+  "words": 166,
+  "estimated_seconds": 47.2,
+  "target_seconds": [
+   40,
+   60
+  ],
+  "inside_target": true,
+  "lines": 17,
+  "words_per_line": 9.8,
+  "longest_line_words": 17
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://www.figure.ai/news/reinforcement-learning-walking",
+   "supports": "Figure 02’s reinforcement-learning controller; thousands of virtual robots training in parallel; years of simulated data in hours; human-gait rewards; varied physical properties, terrain, slips and shoves; the sim-to-real gap; zero-shot transfer without additional tuning; and 10 real robots using the same controller without changes.",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\": \"robot learned walk simulation thousands parallel domain randomization sim to real humanoid training reinforcement learning primary source\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\": \"NVIDIA Isaac Lab humanoid robot simulation thousands environments sim to real domain randomization walking\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\": \"ETH ANYmal learned walk simulation 11 minutes sim to real domain randomization Nature\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.figure.ai/news/reinforcement-learning-walking\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://proceedings.mlr.press/v164/rudin22a/rudin22a.pdf\"}",
+   "ok": false,
+   "error": "the page is not text (it is application/pdf)"
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://docs.nvidia.com/learning/physical-ai/sim-to-real-so-101/latest/09-strategy1-dr-teleop.html\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 6,
+ "model_requests": 3,
+ "usage": {
+  "prompt_tokens": 21906,
+  "completion_tokens": 4095,
+  "reasoning_tokens": 3478,
+  "cost": 0.068768
+ },
+ "seconds_taken": 78.3
+}

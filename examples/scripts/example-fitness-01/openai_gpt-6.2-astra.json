@@ -1,0 +1,164 @@
+{
+ "task_id": "example-fitness-01",
+ "niche": "fitness and exercise science",
+ "model": "openai/gpt-6.2-astra",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "If seed oils are toxic because they're in french fries, what happens when I use the same oil to cook my broccoli?\nDid I just ruin the broccoli?\nHere's where the inflammation claim comes from.\nCanola and soybean oil both contain an omega-6 fat called linoleic acid.\nYour body can use it to make molecules that turn inflammation up.\nSo eating more of it should mean more inflammation, right?\nWell, a review of 30 controlled trials looked at what actually showed up in people's blood when they ate more linoleic acid.\nOverall, the markers you'd expect to go up with inflammation didn't.\nAnd when researchers compared cooking fats, they found that using oils like sunflower oil instead of butter can actually lower your LDL cholesterol.\nThe key words there are “instead of.”\nKeeping the butter and pouring oil on top of it is a different deal, especially if you're trying to lose fat.\nOne tablespoon of canola oil has about 120 calories.\nIf your little drizzle is actually two tablespoons, that's closer to 250.\nNow, I'm not calling fries a health food just because the oil isn't poison.\nBut if cutting out seed oils means you stop eating chips and fries, you've changed a lot more than one ingredient.\nI'd worry less about which seed it came from and more about how much you're using, what you're cooking, and what it's replacing.",
+ "lines": [
+  "If seed oils are toxic because they're in french fries, what happens when I use the same oil to cook my broccoli?",
+  "Did I just ruin the broccoli?",
+  "Here's where the inflammation claim comes from.",
+  "Canola and soybean oil both contain an omega-6 fat called linoleic acid.",
+  "Your body can use it to make molecules that turn inflammation up.",
+  "So eating more of it should mean more inflammation, right?",
+  "Well, a review of 30 controlled trials looked at what actually showed up in people's blood when they ate more linoleic acid.",
+  "Overall, the markers you'd expect to go up with inflammation didn't.",
+  "And when researchers compared cooking fats, they found that using oils like sunflower oil instead of butter can actually lower your LDL cholesterol.",
+  "The key words there are “instead of.”",
+  "Keeping the butter and pouring oil on top of it is a different deal, especially if you're trying to lose fat.",
+  "One tablespoon of canola oil has about 120 calories.",
+  "If your little drizzle is actually two tablespoons, that's closer to 250.",
+  "Now, I'm not calling fries a health food just because the oil isn't poison.",
+  "But if cutting out seed oils means you stop eating chips and fries, you've changed a lot more than one ingredient.",
+  "I'd worry less about which seed it came from and more about how much you're using, what you're cooking, and what it's replacing."
+ ],
+ "length": {
+  "words": 232,
+  "estimated_seconds": 70.3,
+  "target_seconds": [
+   70,
+   90
+  ],
+  "inside_target": true,
+  "lines": 16,
+  "words_per_line": 14.5,
+  "longest_line_words": 23
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://www.harvardhealth.org/heart-health/seeding-doubt-the-truth-about-cooking-oils",
+   "supports": "Canola and soybean oils contain linoleic acid, a precursor to molecules that can promote inflammation. Seed oils are common in fries and chips and can also be used to sauté vegetables; amount and food context matter.",
+   "opened": true
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28752873/",
+   "supports": "A meta-analysis of 30 randomized controlled studies found no significant overall increase in blood inflammatory markers with higher linoleic acid intake.",
+   "opened": true
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6121943/",
+   "supports": "A network meta-analysis of randomized trials found lower LDL cholesterol when sunflower oil and several other oils replaced butter at equal calories.",
+   "opened": true
+  },
+  {
+   "url": "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=04582-1",
+   "supports": "One tablespoon of canola oil contains 123.76 calories, or about 248 calories for two tablespoons.",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils linoleic acid inflammation systematic review 15 randomized controlled trials healthier than butter LDL oil trial safflower tablespoon 120 calories seed oils Harvard Cleveland Clinic\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\": \"controlled trial butter versus corn oil LDL trial randomized corn oil vs butter percent tablespoon unsaturated oil LDL 2018 network meta analysis seed oils\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\": \"NIH Hall ultra processed foods controlled trial 500 calories per day 2 weeks weight gain seed oils processed food not isolate\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6179509/\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6121943/\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.harvardhealth.org/heart-health/seeding-doubt-the-truth-about-cooking-oils\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/31105044/\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "web_search",
+   "arguments": "{\"query\":\"canola oil 120 calories per tablespoon cooking oil 120 calories site:edu or site:heart.org or USDA canola oil calories tablespoon\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "web_search",
+   "arguments": "{\"query\":\"calories 1 tablespoon canola oil 124 medical center nutrition facts canola oil tablespoon\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=76&contentid=04582-1\"}",
+   "ok": true
+  },
+  {
+   "n": 11,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.verywellfit.com/why-canola-oil-is-a-safe-and-healthy-choice-2506062\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "web_search",
+   "arguments": "{\"query\":\"systematic review meta-analysis dietary linoleic acid intake inflammatory markers 30 randomized controlled studies high increase CRP Su 2017 PubMed\"}",
+   "ok": true
+  },
+  {
+   "n": 13,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28752873/\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 13,
+ "model_requests": 8,
+ "usage": {
+  "prompt_tokens": 124375,
+  "completion_tokens": 2361,
+  "reasoning_tokens": 1330,
+  "cost": 0.355486
+ },
+ "seconds_taken": 86.5
+}

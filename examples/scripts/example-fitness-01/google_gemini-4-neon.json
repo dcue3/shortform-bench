@@ -1,0 +1,237 @@
+{
+ "task_id": "example-fitness-01",
+ "niche": "fitness and exercise science",
+ "model": "google/gemini-4-neon",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "By now, everyone's heard that seed oils are basically poison.\nCanola, soybean, sunflower, all supposedly flooding your body with inflammation.\nWell, not quite.\nHere's where that claim actually comes from.\nSeed oils are high in an omega-6 fat called linoleic acid.\nOn paper, your body converts it into arachidonic acid, which helps trigger inflammation.\nSounds scary, right?\nExcept in human trials, increasing it up to six times didn't significantly change arachidonic acid levels.\nEven cutting it by 90% didn't move them.\nAnd across 30 randomized trials on nearly 1,400 adults, higher linoleic acid didn't raise blood inflammation markers.\nIn fact, across over 310,000 people, swapping 5% of daily calories from saturated fat to linoleic acid\nwas linked to a 9% lower risk of heart disease.\nOn a 2,000-calorie diet, that's less than one tablespoon of oil.\nNow, just because it isn't toxic doesn't mean I'm calling canola oil a health food.\nHere's where it gets tricky.\nMost people aren't getting seed oils from cooking dinner at home.\nThey're getting them from fast food and ultra-processed snacks packed with sugar, sodium, and extra calories.\nAnd the amount still matters.\nOne tablespoon of canola oil has 124 calories, so pouring it freely wrecks a fat-loss phase fast.\nPlus, huge spikes in intake or repeatedly reusing oil at high heat is where things can actually backfire.\nSo it depends, and the dose is what makes the poison.\nThe point is, seed oils were never the problem, the ultra-processed diet they're hiding in is.",
+ "lines": [
+  "By now, everyone's heard that seed oils are basically poison.",
+  "Canola, soybean, sunflower, all supposedly flooding your body with inflammation.",
+  "Well, not quite.",
+  "Here's where that claim actually comes from.",
+  "Seed oils are high in an omega-6 fat called linoleic acid.",
+  "On paper, your body converts it into arachidonic acid, which helps trigger inflammation.",
+  "Sounds scary, right?",
+  "Except in human trials, increasing it up to six times didn't significantly change arachidonic acid levels.",
+  "Even cutting it by 90% didn't move them.",
+  "And across 30 randomized trials on nearly 1,400 adults, higher linoleic acid didn't raise blood inflammation markers.",
+  "In fact, across over 310,000 people, swapping 5% of daily calories from saturated fat to linoleic acid",
+  "was linked to a 9% lower risk of heart disease.",
+  "On a 2,000-calorie diet, that's less than one tablespoon of oil.",
+  "Now, just because it isn't toxic doesn't mean I'm calling canola oil a health food.",
+  "Here's where it gets tricky.",
+  "Most people aren't getting seed oils from cooking dinner at home.",
+  "They're getting them from fast food and ultra-processed snacks packed with sugar, sodium, and extra calories.",
+  "And the amount still matters.",
+  "One tablespoon of canola oil has 124 calories, so pouring it freely wrecks a fat-loss phase fast.",
+  "Plus, huge spikes in intake or repeatedly reusing oil at high heat is where things can actually backfire.",
+  "So it depends, and the dose is what makes the poison.",
+  "The point is, seed oils were never the problem, the ultra-processed diet they're hiding in is."
+ ],
+ "length": {
+  "words": 250,
+  "estimated_seconds": 75.8,
+  "target_seconds": [
+   70,
+   90
+  ],
+  "inside_target": true,
+  "lines": 22,
+  "words_per_line": 11.4,
+  "longest_line_words": 18
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://www.heart.org/en/news/2024/08/20/theres-no-reason-to-avoid-seed-oils-and-plenty-of-reasons-to-eat-them",
+   "supports": "Social media claims that seed oils like canola, soy, and sunflower are poisoning people and causing inflammation via omega-6 fats; ultra-processed foods containing added sugar and sodium are the real concern rather than the seed oils themselves.",
+   "opened": true
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/21663641/",
+   "supports": "Linoleic acid is a precursor to arachidonic acid; in a systematic review of adult human clinical trials, increasing dietary linoleic acid up to six-fold or decreasing it by up to 90% had no significant effect on tissue arachidonic acid levels.",
+   "opened": true
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28752873/",
+   "supports": "A meta-analysis of 30 randomized controlled trials involving 1,377 adults found increasing dietary linoleic acid did not significantly increase blood inflammatory markers, though subgroup analysis suggested very large increases in intake might raise CRP.",
+   "opened": true
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25161045/",
+   "supports": "A meta-analysis of 13 cohort studies with 310,602 people found replacing 5% of daily energy from saturated fat with linoleic acid was associated with a 9% lower risk of coronary heart disease events.",
+   "opened": true
+  },
+  {
+   "url": "https://health.clevelandclinic.org/seed-oils-are-they-actually-toxic",
+   "supports": "Seed oils are high in linoleic acid (an omega-6 fat), are mostly consumed via fast foods and ultra-processed foods high in fat, sugar, and sodium rather than home cooking, and cooking them at high temperatures or reusing them worsens their negative effects.",
+   "opened": true
+  },
+  {
+   "url": "https://www.healthline.com/nutrition/is-canola-oil-healthy",
+   "supports": "One tablespoon (15 ml) of canola oil contains 124 calories.",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Harvard seed oils linoleic acid inflammation heart disease\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\":\"linoleic acid conversion to arachidonic acid percentage human study Rett Whelan\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Johnson Fritsche 2012 linoleic acid inflammation randomized controlled trials\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "web_search",
+   "arguments": "{\"query\":\"AHA seed oils American Heart Association ultra-processed foods\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.heart.org/en/news/2024/08/20/theres-no-reason-to-avoid-seed-oils-and-plenty-of-reasons-to-eat-them\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22889633/\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21663641/\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://hsph.harvard.edu/news/are-seed-oils-healthful-or-harmful/\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"0.3%\\\" \\\"0.6%\\\" linoleic acid arachidonic acid Whelan\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Farvid 2014 linoleic acid coronary heart disease 5% energy Harvard\"}",
+   "ok": true
+  },
+  {
+   "n": 11,
+   "name": "web_search",
+   "arguments": "{\"query\":\"calories in one tablespoon vegetable oil canola oil USDA Healthline\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "web_search",
+   "arguments": "{\"query\":\"seed oils repeatedly heated frying oxidation aldehydes Harvard OR Cleveland Clinic OR Hopkins\"}",
+   "ok": true
+  },
+  {
+   "n": 13,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3132704/\"}",
+   "ok": true
+  },
+  {
+   "n": 14,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pubmed.ncbi.nlm.nih.gov/25161045/\"}",
+   "ok": true
+  },
+  {
+   "n": 15,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.healthline.com/nutrition/is-canola-oil-healthy\"}",
+   "ok": true
+  },
+  {
+   "n": 16,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://health.clevelandclinic.org/seed-oils-are-they-actually-toxic\"}",
+   "ok": true
+  },
+  {
+   "n": 17,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://advances.nutrition.org/article/S2161-8313(22)01118-8/fulltext\"}",
+   "ok": false,
+   "error": "the site answered with HTTP 403"
+  },
+  {
+   "n": 18,
+   "name": "web_search",
+   "arguments": "{\"query\":\"Su 2017 linoleic acid inflammatory markers meta-analysis randomized controlled trials PubMed\"}",
+   "ok": true
+  },
+  {
+   "n": 19,
+   "name": "web_search",
+   "arguments": "{\"query\":\"butter plant-based oils JAMA Internal Medicine 2025 mortality Harvard\"}",
+   "ok": true
+  },
+  {
+   "n": 20,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28752873/\"}",
+   "ok": true
+  },
+  {
+   "n": 21,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6179509/\"}",
+   "ok": false,
+   "error": "over limit"
+  },
+  {
+   "n": 22,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40048719/\"}",
+   "ok": false,
+   "error": "over limit"
+  }
+ ],
+ "tool_calls_used": 20,
+ "model_requests": 7,
+ "usage": {
+  "prompt_tokens": 116501,
+  "completion_tokens": 20965,
+  "reasoning_tokens": 19290,
+  "cost": 0.49667
+ },
+ "seconds_taken": 262.0
+}

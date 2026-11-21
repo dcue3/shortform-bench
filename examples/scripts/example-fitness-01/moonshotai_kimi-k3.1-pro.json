@@ -1,0 +1,135 @@
+{
+ "task_id": "example-fitness-01",
+ "niche": "fitness and exercise science",
+ "model": "moonshotai/kimi-k3.1-pro",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "Seed oils are toxic, inflammatory, and apparently responsible for everything except your bad squat depth.\nThe theory sounds scientific.\nSeed oils contain linoleic acid, an omega-6 fat your body can turn into arachidonic acid.\nThat's used to make inflammatory compounds.\nSo eat sunflower oil, become inflammation.\nExcept your body keeps arachidonic acid levels relatively stable.\nA review of 15 randomized controlled trials found no significant effect on CRP or other inflammatory markers.\nThose trials were small and lasted just two to 40 days.\nSo no, that doesn't prove unlimited oil is harmless forever.\nBut “theoretically possible” isn't evidence that normal amounts are toxic.\nControlled trials also show that replacing saturated fat with linoleic acid lowers LDL cholesterol.\nNow for what the panic leaves out.\nSeed oils show up in ultra-processed foods like chips and frozen meals.\nThose foods often come with added salt, sugar, and other stuff worth paying attention to.\nBlaming the oil for the entire food is like blaming the lettuce for what's inside a burger.\nAnd not being toxic doesn't automatically make something healthy.\nThe amount matters too.\nFor scale, the American Heart Association recommends 5 to 10% of calories from omega-6 fats.\nOn a 2,000-calorie diet, that's about 11 to 22 grams.\nThat's roughly one and a half to three tablespoons of soybean or corn oil's worth of linoleic acid.\nAcross your whole diet, not an oil-drinking target.\nThe question isn't whether an ingredient sounds scary.\nIt's what you're eating, what it replaces, and how much.",
+ "lines": [
+  "Seed oils are toxic, inflammatory, and apparently responsible for everything except your bad squat depth.",
+  "The theory sounds scientific.",
+  "Seed oils contain linoleic acid, an omega-6 fat your body can turn into arachidonic acid.",
+  "That's used to make inflammatory compounds.",
+  "So eat sunflower oil, become inflammation.",
+  "Except your body keeps arachidonic acid levels relatively stable.",
+  "A review of 15 randomized controlled trials found no significant effect on CRP or other inflammatory markers.",
+  "Those trials were small and lasted just two to 40 days.",
+  "So no, that doesn't prove unlimited oil is harmless forever.",
+  "But “theoretically possible” isn't evidence that normal amounts are toxic.",
+  "Controlled trials also show that replacing saturated fat with linoleic acid lowers LDL cholesterol.",
+  "Now for what the panic leaves out.",
+  "Seed oils show up in ultra-processed foods like chips and frozen meals.",
+  "Those foods often come with added salt, sugar, and other stuff worth paying attention to.",
+  "Blaming the oil for the entire food is like blaming the lettuce for what's inside a burger.",
+  "And not being toxic doesn't automatically make something healthy.",
+  "The amount matters too.",
+  "For scale, the American Heart Association recommends 5 to 10% of calories from omega-6 fats.",
+  "On a 2,000-calorie diet, that's about 11 to 22 grams.",
+  "That's roughly one and a half to three tablespoons of soybean or corn oil's worth of linoleic acid.",
+  "Across your whole diet, not an oil-drinking target.",
+  "The question isn't whether an ingredient sounds scary.",
+  "It's what you're eating, what it replaces, and how much."
+ ],
+ "length": {
+  "words": 250,
+  "estimated_seconds": 75.8,
+  "target_seconds": [
+   70,
+   90
+  ],
+  "inside_target": true,
+  "lines": 23,
+  "words_per_line": 10.9,
+  "longest_line_words": 18
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6179509/",
+   "supports": "The linoleic acid–arachidonic acid rationale for inflammation claims; the review of 15 randomized controlled trials and its findings on CRP and other markers; the trials’ small size and two-to-40-day duration.",
+   "opened": true
+  },
+  {
+   "url": "https://www.eufic.org/en/misinformation/article/do-seed-oils-cause-inflammation",
+   "supports": "Seed oils contain linoleic acid; arachidonic acid levels remain relatively stable; the American Heart Association’s 5–10% calorie recommendation and its conversion to about 11–22 grams on a 2,000-calorie diet.",
+   "opened": true
+  },
+  {
+   "url": "https://nutritionsource.hsph.harvard.edu/2014/11/05/dietary-linoleic-acid-and-risk-of-coronary-heart-disease/",
+   "supports": "Controlled trials showing LDL reduction when saturated fat is replaced with linoleic acid; soybean and corn oil contain about 7–8 grams of linoleic acid per tablespoon.",
+   "opened": true
+  },
+  {
+   "url": "https://publichealth.jhu.edu/2025/the-evidence-behind-seed-oils-health-effects",
+   "supports": "Seed oils are common in ultra-processed foods such as chips and frozen meals; those foods often contain salt, added sugar and other relevant ingredients, so the oil should not be conflated with the whole food.",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\": \"systematic review randomized controlled trials linoleic acid inflammatory markers seed oils omega 6 arachidonic acid inflammation\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\": \"American Heart Association omega 6 linoleic acid cardiovascular disease randomized trials 5 10 percent energy advisory\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils ultra processed foods health outcomes oil itself foods Harvard linoleic acid LDL cholesterol\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://publichealth.jhu.edu/2025/the-evidence-behind-seed-oils-health-effects\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6179509/\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://nutritionsource.hsph.harvard.edu/2014/11/05/dietary-linoleic-acid-and-risk-of-coronary-heart-disease/\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.eufic.org/en/misinformation/article/do-seed-oils-cause-inflammation\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 7,
+ "model_requests": 3,
+ "usage": {
+  "prompt_tokens": 25376,
+  "completion_tokens": 6103,
+  "reasoning_tokens": 5085,
+  "cost": 0.096054
+ },
+ "seconds_taken": 70.0
+}

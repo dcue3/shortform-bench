@@ -1,0 +1,173 @@
+{
+ "task_id": "example-fitness-01",
+ "niche": "fitness and exercise science",
+ "model": "anthropic/claude-fable-5.2",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "By now, I think everyone agrees that seed oils are basically poison.\nCanola, soybean, sunflower, the so-called hateful eight.\nBut what if the oil was never the problem?\nHere's where the fear comes from.\nSeed oils are high in an omega-6 fat called linoleic acid.\nAnd your body can turn that into arachidonic acid, which it uses to make inflammatory compounds.\nSo more seed oil means more inflammation, right?\nOn paper, sure.\nBut then researchers actually tested it.\nA review of 15 randomized controlled trials looked at healthy people eating more linoleic acid.\nAnd not one of them found a significant increase in inflammatory markers like C-reactive protein.\nThen you look at heart disease, and it gets even weirder.\nAn analysis of 13 studies, following over 310,000 people, found that the ones eating the most linoleic acid had a 15% lower risk of coronary heart disease.\nAnd a 21% lower risk of dying from it.\nEven swapping just 5% of your calories from saturated fat to linoleic acid was linked to a 9% lower risk.\nOn a 2,000 calorie diet, that's about 100 calories a day.\nSo why does everyone feel amazing when they cut seed oils out?\nBecause of where they're hiding.\nFries, chips, cake, frozen dinners.\nFoods that are loaded with calories, added sugar and sodium.\nSo if you quit seed oils by quitting fast food and chips, of course you feel better.\nYou quit fast food and chips.\nNow, I'm not saying go chug a bottle of canola oil.\nOne tablespoon is still 124 calories of pure fat, and that adds up fast.\nThe dose still makes the poison.\nBut it was never really about what your food is cooked in.\nIt's about what food you're cooking.",
+ "lines": [
+  "By now, I think everyone agrees that seed oils are basically poison.",
+  "Canola, soybean, sunflower, the so-called hateful eight.",
+  "But what if the oil was never the problem?",
+  "Here's where the fear comes from.",
+  "Seed oils are high in an omega-6 fat called linoleic acid.",
+  "And your body can turn that into arachidonic acid, which it uses to make inflammatory compounds.",
+  "So more seed oil means more inflammation, right?",
+  "On paper, sure.",
+  "But then researchers actually tested it.",
+  "A review of 15 randomized controlled trials looked at healthy people eating more linoleic acid.",
+  "And not one of them found a significant increase in inflammatory markers like C-reactive protein.",
+  "Then you look at heart disease, and it gets even weirder.",
+  "An analysis of 13 studies, following over 310,000 people, found that the ones eating the most linoleic acid had a 15% lower risk of coronary heart disease.",
+  "And a 21% lower risk of dying from it.",
+  "Even swapping just 5% of your calories from saturated fat to linoleic acid was linked to a 9% lower risk.",
+  "On a 2,000 calorie diet, that's about 100 calories a day.",
+  "So why does everyone feel amazing when they cut seed oils out?",
+  "Because of where they're hiding.",
+  "Fries, chips, cake, frozen dinners.",
+  "Foods that are loaded with calories, added sugar and sodium.",
+  "So if you quit seed oils by quitting fast food and chips, of course you feel better.",
+  "You quit fast food and chips.",
+  "Now, I'm not saying go chug a bottle of canola oil.",
+  "One tablespoon is still 124 calories of pure fat, and that adds up fast.",
+  "The dose still makes the poison.",
+  "But it was never really about what your food is cooked in.",
+  "It's about what food you're cooking."
+ ],
+ "length": {
+  "words": 290,
+  "estimated_seconds": 87.9,
+  "target_seconds": [
+   70,
+   90
+  ],
+  "inside_target": true,
+  "lines": 27,
+  "words_per_line": 10.7,
+  "longest_line_words": 27
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22889633/",
+   "supports": "The inflammation concern (omega-6/linoleic acid driving pro-inflammatory compounds made from arachidonic acid); systematic review of 15 randomized controlled trials in healthy people; none reported significant findings for inflammatory markers including C-reactive protein",
+   "opened": true
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25161045/",
+   "supports": "13 cohort studies with 310,602 people; highest vs lowest linoleic acid intake linked to 15% lower risk of coronary heart disease events and 21% lower risk of CHD deaths; replacing 5% of energy from saturated fat with linoleic acid linked to 9% lower risk",
+   "opened": true
+  },
+  {
+   "url": "https://publichealth.jhu.edu/2025/the-evidence-behind-seed-oils-health-effects",
+   "supports": "The \"hateful eight\" list including canola, soybean and sunflower; linoleic acid as the main fat in seed oils; seed oils found in packaged foods like chips and frozen dinners; their effects being conflated with the ultraprocessed foods they come in (high in sodium, added sugar)",
+   "opened": true
+  },
+  {
+   "url": "https://www.heart.org/en/news/2024/08/20/theres-no-reason-to-avoid-seed-oils-and-plenty-of-reasons-to-eat-them",
+   "supports": "\"Hateful Eight\" framing; seed oils high in omega-6; the real concern being ultra-processed foods with added sugar and sodium rather than the oil; people cook with these oils rather than drink them",
+   "opened": true
+  },
+  {
+   "url": "https://med.stanford.edu/news/insights/2025/03/5-things-to-know-about-the-effects-of-seed-oils-on-health.html",
+   "supports": "Seed oils in fast-food fries; harms of junk food coming from calories, added sugar and sodium more than seed oil; people who feel better after quitting seed oils are likely noticing the effect of cutting fast food, cake and chips",
+   "opened": true
+  },
+  {
+   "url": "https://www.verywellfit.com/why-canola-oil-is-a-safe-and-healthy-choice-2506062",
+   "supports": "One tablespoon of canola oil has 124 calories, all from fat",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\": \"Johnson Fritsche 2012 systematic review linoleic acid inflammatory markers randomized controlled trials healthy adults\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\": \"Farvid 2014 dietary linoleic acid coronary heart disease risk meta-analysis prospective cohort 15% lower\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils inflammatory claim omega-6 linoleic acid arachidonic acid where the idea comes from Harvard OR Stanford OR Johns Hopkins\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "web_search",
+   "arguments": "{\"query\": \"American Heart Association seed oils ultra-processed foods \\\"seed oils\\\" not the problem omega-6 science\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/22889633/\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/25161045/\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://publichealth.jhu.edu/2025/the-evidence-behind-seed-oils-health-effects\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.heart.org/en/news/2024/08/20/theres-no-reason-to-avoid-seed-oils-and-plenty-of-reasons-to-eat-them\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://med.stanford.edu/news/insights/2025/03/5-things-to-know-about-the-effects-of-seed-oils-on-health.html\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "web_search",
+   "arguments": "{\"query\": \"canola oil one tablespoon calories 124 grams fat nutrition facts\"}",
+   "ok": true
+  },
+  {
+   "n": 11,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.verywellfit.com/why-canola-oil-is-a-safe-and-healthy-choice-2506062\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 11,
+ "model_requests": 5,
+ "usage": {
+  "prompt_tokens": 79798,
+  "completion_tokens": 4091,
+  "reasoning_tokens": 1865,
+  "cost": 0.802024
+ },
+ "seconds_taken": 77.3
+}

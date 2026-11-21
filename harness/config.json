@@ -1,0 +1,96 @@
+{
+  "round": "dev",
+  "models": [
+    {
+      "id": "anthropic/claude-fable-5.2",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "anthropic/claude-haiku-5.5",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "openai/gpt-6.2-astra",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "openai/gpt-6-luna",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "google/gemini-4-neon",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "google/gemini-3.8-flash",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "moonshotai/kimi-k3.1-pro",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    }
+  ],
+  "extra_models": [
+    {
+      "id": "meta/muse-wonder",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    {
+      "id": "x-ai/grok-4.7",
+      "settings": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    }
+  ],
+  "past_scripts_per_task": 10,
+  "limits": {
+    "max_tool_calls": 20,
+    "max_model_requests": 30,
+    "max_output_tokens": 40000,
+    "request_timeout_s": 600,
+    "search_results": 5,
+    "page_chars": 20000
+  },
+  "search": {
+    "provider": "tavily"
+  },
+  "openrouter": {
+    "data_collection": "deny"
+  },
+  "budget_usd": 25,
+  "workers": 4
+}

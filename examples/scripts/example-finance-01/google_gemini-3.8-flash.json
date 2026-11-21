@@ -1,0 +1,214 @@
+{
+ "task_id": "example-finance-01",
+ "niche": "personal finance and business",
+ "model": "google/gemini-3.8-flash",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "Roth or traditional 401(k)?\nMost people get this wrong, but here's exactly how to choose.\nA traditional 401(k) takes pre-tax dollars, lowering your taxable income today.\nBut in retirement, every dollar you withdraw is taxed as ordinary income.\nA Roth 401(k) uses after-tax dollars, so there's no tax break today.\nInstead, your qualified withdrawals in retirement are completely tax-free.\nPlus, Roth 401(k)s have no required minimum distributions during your lifetime.\nHere's the worked dollar example.\nSay you invest five thousand dollars.\nAt a seven percent return over thirty years, that grows to thirty-eight thousand sixty-one dollars.\nIn a traditional account, paying a twenty-four percent tax at withdrawal takes nine thousand one hundred and thirty-four dollars.\nYou walk away with twenty-eight thousand nine hundred and twenty-seven dollars.\nIn a Roth, you keep that full thirty-eight thousand sixty-one dollars tax-free.\nHow you choose comes down to two questions.\nOne: will your tax bracket be higher now, or in retirement?\nIf your bracket will be higher in retirement, Roth wins because you lock in the lower rate today.\nIf you're in peak earning years and your bracket will drop, traditional wins because you take the deduction at your highest rate.\nTwo: do you need cash in your paycheck right now?\nIf money is tight, traditional gives you that immediate tax relief.\nIf you're not sure, you can even split your contributions between both accounts.\nDo your own research, but let me know: are you team Roth or traditional?\nAnd if you're looking to grow your net worth, follow me.",
+ "lines": [
+  "Roth or traditional 401(k)?",
+  "Most people get this wrong, but here's exactly how to choose.",
+  "A traditional 401(k) takes pre-tax dollars, lowering your taxable income today.",
+  "But in retirement, every dollar you withdraw is taxed as ordinary income.",
+  "A Roth 401(k) uses after-tax dollars, so there's no tax break today.",
+  "Instead, your qualified withdrawals in retirement are completely tax-free.",
+  "Plus, Roth 401(k)s have no required minimum distributions during your lifetime.",
+  "Here's the worked dollar example.",
+  "Say you invest five thousand dollars.",
+  "At a seven percent return over thirty years, that grows to thirty-eight thousand sixty-one dollars.",
+  "In a traditional account, paying a twenty-four percent tax at withdrawal takes nine thousand one hundred and thirty-four dollars.",
+  "You walk away with twenty-eight thousand nine hundred and twenty-seven dollars.",
+  "In a Roth, you keep that full thirty-eight thousand sixty-one dollars tax-free.",
+  "How you choose comes down to two questions.",
+  "One: will your tax bracket be higher now, or in retirement?",
+  "If your bracket will be higher in retirement, Roth wins because you lock in the lower rate today.",
+  "If you're in peak earning years and your bracket will drop, traditional wins because you take the deduction at your highest rate.",
+  "Two: do you need cash in your paycheck right now?",
+  "If money is tight, traditional gives you that immediate tax relief.",
+  "If you're not sure, you can even split your contributions between both accounts.",
+  "Do your own research, but let me know: are you team Roth or traditional?",
+  "And if you're looking to grow your net worth, follow me."
+ ],
+ "length": {
+  "words": 256,
+  "estimated_seconds": 75.7,
+  "target_seconds": [
+   60,
+   90
+  ],
+  "inside_target": true,
+  "lines": 22,
+  "words_per_line": 11.6,
+  "longest_line_words": 22
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://www.fidelity.com/viewpoints/retirement/spender-or-saver",
+   "supports": "Traditional contributions lower current taxable income while retirement withdrawals are taxed as ordinary income; Roth contributions use after-tax money with no immediate tax break while qualified retirement withdrawals are tax-free; worked example of a $5,000 contribution at a 7% return over 30 years growing to $38,061, where a 24% tax rate in traditional takes $9,134 leaving $28,927, whereas Roth keeps the full $38,061 tax-free; if your tax bracket in retirement will be higher than today Roth makes sense, but if lower traditional is more appropriate; traditional leaves more immediate cash in your paycheck; savers can split contributions between both account types.",
+   "opened": true
+  },
+  {
+   "url": "https://www.schwab.com/learn/story/should-you-consider-roth-401k",
+   "supports": "Traditional 401(k) contributions are pre-tax and retirement withdrawals are taxable; Roth 401(k) contributions are after-tax and qualified retirement withdrawals are tax-free; Roth 401(k) accounts have no lifetime required minimum distributions; Roth 401(k) wins if your tax bracket in retirement is higher than today while traditional makes sense if your tax bracket will drop in retirement; contributions can be split between both accounts.",
+   "opened": true
+  },
+  {
+   "url": "https://www.nerdwallet.com/retirement/learn/roth-401k-vs-401k",
+   "supports": "Traditional 401(k) contributions are pre-tax and reduce current taxable income while distributions are taxed as ordinary income; Roth 401(k) contributions are after-tax and qualified distributions are tax-free; Roth 401(k) plans have no required minimum distributions; deciding hinges on whether your retirement tax bracket will be higher or lower than today and whether you need the immediate paycheck tax break; contributions can be split between both accounts.",
+   "opened": true
+  },
+  {
+   "url": "https://www.troweprice.com/personal-investing/resources/insights/what-you-need-know-deciding-between-roth-and-traditional.html",
+   "supports": "Pre-tax traditional contributions reduce current taxable income while withdrawals are taxable; Roth contributions use after-tax dollars and qualified distributions are tax-free; higher expected tax rates in retirement favor Roth while lower rates in retirement favor traditional; peak earning years favor traditional contributions to take the deduction at your highest tax rate; tight cash flow favors traditional contributions to maximize current paycheck take-home pay; splitting contributions between both accounts hedges future tax uncertainty.",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\":\"traditional vs roth 401k tax bracket worked example Fidelity Vanguard\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401(k)\\\" \\\"roth 401(k)\\\" \\\"tax bracket\\\" example site:nerdwallet.com OR site:investopedia.com\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.nerdwallet.com/retirement/learn/roth-401k-vs-401k\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401(k)\\\" \\\"roth 401(k)\\\" \\\"example\\\" tax bracket \\\"10,000\\\" OR \\\"5,000\\\" site:investopedia.com OR site:fidelity.com OR site:schwab.com\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.fidelity.com/viewpoints/retirement/spender-or-saver\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401k\\\" \\\"roth 401k\\\" \\\"tax bracket\\\" \\\"example\\\" \\\"10,000\\\" OR \\\"1,000\\\" site:investopedia.com OR site:bankrate.com\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401(k)\\\" \\\"roth 401(k)\\\" site:schwab.com \\\"tax bracket\\\"\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.schwab.com/learn/story/should-you-consider-roth-401k\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401(k)\\\" \\\"roth 401(k)\\\" \\\"tax bracket\\\" \\\"example\\\" \\\"retire\\\" \\\"pay\\\" \\\"taxes\\\" site:investopedia.com\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "web_search",
+   "arguments": "{\"query\":\"site:investopedia.com traditional vs roth 401k tax bracket example\"}",
+   "ok": true
+  },
+  {
+   "n": 11,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.investopedia.com/terms/r/roth401k.asp\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.investopedia.com/articles/retirement/06/moreonroth401k.asp\"}",
+   "ok": true
+  },
+  {
+   "n": 13,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401(k)\\\" \\\"roth\\\" \\\"example\\\" \\\"tax bracket\\\" \\\"22%\\\" \\\"12%\\\" OR \\\"24%\\\"\"}",
+   "ok": true
+  },
+  {
+   "n": 14,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.bogleheads.org/wiki/Traditional_versus_Roth\"}",
+   "ok": false,
+   "error": "the site answered with HTTP 403"
+  },
+  {
+   "n": 15,
+   "name": "web_search",
+   "arguments": "{\"query\":\"site:troweprice.com \\\"deciding between roth and traditional\\\"\"}",
+   "ok": true
+  },
+  {
+   "n": 16,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.troweprice.com/personal-investing/resources/insights/what-you-need-know-deciding-between-roth-and-traditional.html\"}",
+   "ok": true
+  },
+  {
+   "n": 17,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401(k)\\\" \\\"roth 401(k)\\\" \\\"example\\\" \\\"$10,000\\\" site:investopedia.com OR site:bankrate.com\"}",
+   "ok": true
+  },
+  {
+   "n": 18,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.investopedia.com/beginners-guide-to-types-of-401-k-s-5323549\"}",
+   "ok": false,
+   "error": "the site answered with HTTP 403"
+  },
+  {
+   "n": 19,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"traditional 401(k)\\\" \\\"roth 401(k)\\\" \\\"tax bracket\\\" \\\"example\\\" site:bankrate.com\"}",
+   "ok": true
+  },
+  {
+   "n": 20,
+   "name": "web_search",
+   "arguments": "{\"query\":\"site:bankrate.com traditional vs roth 401k\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 20,
+ "model_requests": 21,
+ "usage": {
+  "prompt_tokens": 417334,
+  "completion_tokens": 31931,
+  "reasoning_tokens": 30097,
+  "cost": 0.23413
+ },
+ "seconds_taken": 274.7
+}

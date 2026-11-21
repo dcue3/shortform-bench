@@ -1,0 +1,187 @@
+{
+ "task_id": "example-fitness-01",
+ "niche": "fitness and exercise science",
+ "model": "anthropic/claude-haiku-5.5",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "Seed oils are toxic. You've seen that claim a hundred times by now.\nSo where's it coming from?\nCanola, corn, soybean, sunflower, and safflower got lumped together as the \"hateful eight,\" and the scare blew up after a 2020 podcast with Paul Saladino.\nNow the research.\nIn 2019, researchers pooled data from over 68,000 people across 30 studies.\nThe people with the most linoleic acid in their blood, the main fat in these oils, had a lower risk of heart disease and stroke.\nAcross the range people actually eat in, that's about 7% lower risk of heart disease and stroke, and about 22% lower risk of dying from cardiovascular disease.\nThat's an association, so it's not proof.\nOn inflammation, a review of 15 controlled trials in healthy people found virtually no evidence that adding linoleic acid raised inflammatory markers.\nNow, the one study everyone brings up is the Sydney Diet Heart Study.\nIn the late 60s and 70s, about 450 men who'd recently had a heart event swapped saturated fat for safflower oil.\nA 2013 reanalysis found the safflower group died more often, 17.6% versus 11.8%.\nAn updated meta-analysis found no clear cardiovascular benefit.\nSo that's one old trial worth knowing about, not a reason to call the oil poison.\nAnd the oil isn't the same as what it's in.\nMost of the blame belongs to ultraprocessed food, which is usually high in salt, sugar, and additives.\nSwap butter, lard, or tallow for canola or sunflower oil at home, and your LDL cholesterol goes down compared to those.\nNot toxic doesn't automatically make it healthy, and the dose still matters.\nA splash in your pan isn't the same as fried food every day.\nSo the question was never whether seed oil is poison.\nIt's whether it's replacing saturated fat, or hiding inside a bag of chips.",
+ "lines": [
+  "Seed oils are toxic. You've seen that claim a hundred times by now.",
+  "So where's it coming from?",
+  "Canola, corn, soybean, sunflower, and safflower got lumped together as the \"hateful eight,\" and the scare blew up after a 2020 podcast with Paul Saladino.",
+  "Now the research.",
+  "In 2019, researchers pooled data from over 68,000 people across 30 studies.",
+  "The people with the most linoleic acid in their blood, the main fat in these oils, had a lower risk of heart disease and stroke.",
+  "Across the range people actually eat in, that's about 7% lower risk of heart disease and stroke, and about 22% lower risk of dying from cardiovascular disease.",
+  "That's an association, so it's not proof.",
+  "On inflammation, a review of 15 controlled trials in healthy people found virtually no evidence that adding linoleic acid raised inflammatory markers.",
+  "Now, the one study everyone brings up is the Sydney Diet Heart Study.",
+  "In the late 60s and 70s, about 450 men who'd recently had a heart event swapped saturated fat for safflower oil.",
+  "A 2013 reanalysis found the safflower group died more often, 17.6% versus 11.8%.",
+  "An updated meta-analysis found no clear cardiovascular benefit.",
+  "So that's one old trial worth knowing about, not a reason to call the oil poison.",
+  "And the oil isn't the same as what it's in.",
+  "Most of the blame belongs to ultraprocessed food, which is usually high in salt, sugar, and additives.",
+  "Swap butter, lard, or tallow for canola or sunflower oil at home, and your LDL cholesterol goes down compared to those.",
+  "Not toxic doesn't automatically make it healthy, and the dose still matters.",
+  "A splash in your pan isn't the same as fried food every day.",
+  "So the question was never whether seed oil is poison.",
+  "It's whether it's replacing saturated fat, or hiding inside a bag of chips."
+ ],
+ "length": {
+  "words": 306,
+  "estimated_seconds": 92.7,
+  "target_seconds": [
+   70,
+   90
+  ],
+  "inside_target": false,
+  "lines": 21,
+  "words_per_line": 14.6,
+  "longest_line_words": 27
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/30971107/",
+   "supports": "Pooled analysis of 30 prospective studies, 68,659 participants, 13 countries; higher circulating linoleic acid associated with lower total CVD (HR 0.93), CV mortality (HR 0.78) and ischemic stroke (HR 0.88) per interquintile range; observational association, so not proof of causation",
+   "opened": true
+  },
+  {
+   "url": "https://publichealth.jhu.edu/2025/the-evidence-behind-seed-oils-health-effects",
+   "supports": "Seed oils come from seeds (unlike olive or avocado oil); \"hateful eight\" list of oils; linoleic acid is the main polyunsaturated fat and is associated with lower CVD risk; ultraprocessed foods are usually high in sodium, added sugars, unhealthy fats and additives, which is why they are bad for you rather than the seed oils; seed oils lower LDL compared with butter, lard and beef tallow",
+   "opened": true
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22889633/",
+   "supports": "Systematic review of 15 randomized controlled trials in healthy, non-infant humans; none reported significant increases in inflammatory markers such as CRP from added linoleic acid",
+   "opened": true
+  },
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/23386268/",
+   "supports": "Sydney Diet Heart Study recovered data: 458 men aged 30-59 with a recent coronary event, trial conducted 1966-73; safflower oil replacing saturated fat gave all-cause death 17.6% vs 11.8% (HR 1.62); updated meta-analysis showed no evidence of cardiovascular benefit, with non-significant trends toward increased risk",
+   "opened": true
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Seed_oil_misinformation",
+   "supports": "\"Hateful eight\" label coined by critics such as Cate Shanahan; the social media trend grew in 2020 after Joe Rogan interviewed Paul Saladino; claims that seed oils are harmful are not supported by clinical or epidemiological data",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils linoleic acid cardiovascular disease mortality Marklund 2019 Circulation pooled analysis\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils inflammation claim evidence linoleic acid meta-analysis inflammatory markers\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\": \"Minnesota Coronary Experiment reanalysis Ramsden linoleic acid death rate\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://publichealth.jhu.edu/2025/the-evidence-behind-seed-oils-health-effects\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/30971107/\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "web_search",
+   "arguments": "{\"query\": \"Johnson Fritsche 2012 effect of dietary linoleic acid on markers of inflammation systematic review randomized trials\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/22889633/\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "web_search",
+   "arguments": "{\"query\": \"Sydney Diet Heart Study safflower oil linoleic acid higher mortality Ramsden 2013 BMJ\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "web_search",
+   "arguments": "{\"query\": \"linoleic acid conversion to arachidonic acid percent of intake study does not increase arachidonic acid\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.bmj.com/content/346/bmj.e8707\"}",
+   "ok": false,
+   "error": "the site answered with HTTP 403"
+  },
+  {
+   "n": 11,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3132704/\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "web_search",
+   "arguments": "{\"query\": \"where did the seed oils are toxic claim come from history viral social media origin evidence review\"}",
+   "ok": true
+  },
+  {
+   "n": 13,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/23386268/\"}",
+   "ok": true
+  },
+  {
+   "n": 14,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/42047660/\"}",
+   "ok": true
+  },
+  {
+   "n": 15,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://en.wikipedia.org/wiki/Seed_oil_misinformation\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 15,
+ "model_requests": 6,
+ "usage": {
+  "prompt_tokens": 112215,
+  "completion_tokens": 10851,
+  "reasoning_tokens": 8386,
+  "cost": 0.016647
+ },
+ "seconds_taken": 98.8
+}

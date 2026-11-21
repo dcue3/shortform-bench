@@ -1,0 +1,8 @@
+# Generated scripts, saved pages and any private task files
+harness/data/
+
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*

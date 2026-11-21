@@ -1,0 +1,171 @@
+{
+ "task_id": "example-tech-01",
+ "niche": "technology and AI",
+ "model": "google/gemini-3.8-flash",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "This is how advanced robots learn to walk before they even exist.\nIf you taught a real robot through trial and error, it would constantly fall and break.\nSo companies like Figure and Nvidia train them inside a physics simulator.\nWhat you're looking at is thousands of virtual robots learning at the exact same time.\nThey trip, slip, and fall millions of times.\nAnd because it's running on GPUs, you can simulate years of walking data in just a few hours.\nNow, the wildest part is making the jump into the real world.\nRoboticists call this the sim-to-real gap.\nSimulated physics is only an approximation, but real floors have random friction and motor delays.\nTo fix that, engineers use something called domain randomization.\nThink of it like throwing constant digital curveballs.\nThe simulator randomizes ground friction, adds sensor noise, and even shoves the robots while they walk.\nSo when that AI is loaded onto a real machine, it walks on day one with zero extra tuning.\nThat's the big takeaway.\nIn just a few years, humanoid robots will show up with decades of practice before taking their very first real step.\nFollow for more stories like this about tech, AI, and robotics.",
+ "lines": [
+  "This is how advanced robots learn to walk before they even exist.",
+  "If you taught a real robot through trial and error, it would constantly fall and break.",
+  "So companies like Figure and Nvidia train them inside a physics simulator.",
+  "What you're looking at is thousands of virtual robots learning at the exact same time.",
+  "They trip, slip, and fall millions of times.",
+  "And because it's running on GPUs, you can simulate years of walking data in just a few hours.",
+  "Now, the wildest part is making the jump into the real world.",
+  "Roboticists call this the sim-to-real gap.",
+  "Simulated physics is only an approximation, but real floors have random friction and motor delays.",
+  "To fix that, engineers use something called domain randomization.",
+  "Think of it like throwing constant digital curveballs.",
+  "The simulator randomizes ground friction, adds sensor noise, and even shoves the robots while they walk.",
+  "So when that AI is loaded onto a real machine, it walks on day one with zero extra tuning.",
+  "That's the big takeaway.",
+  "In just a few years, humanoid robots will show up with decades of practice before taking their very first real step.",
+  "Follow for more stories like this about tech, AI, and robotics."
+ ],
+ "length": {
+  "words": 202,
+  "estimated_seconds": 57.4,
+  "target_seconds": [
+   40,
+   60
+  ],
+  "inside_target": true,
+  "lines": 16,
+  "words_per_line": 12.6,
+  "longest_line_words": 21
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://www.figure.ai/news/reinforcement-learning-walking",
+   "supports": "Figure trains humanoid robots to walk in GPU-accelerated physics simulation using reinforcement learning; thousands of robots are simulated in parallel; years of walking data are simulated in a few hours; robots encounter trips, slips, and shoves; sim-to-real gap exists because simulation is an approximation; domain randomization randomizes surface friction and physical properties; policies transfer zero-shot to physical robots without additional tuning",
+   "opened": true
+  },
+  {
+   "url": "https://developer.nvidia.com/blog/closing-the-sim-to-real-gap-training-spot-quadruped-locomotion-with-nvidia-isaac-lab/",
+   "supports": "Training walking robots in the real world can damage equipment and hardware; Nvidia physics simulation runs thousands of parallel environments on GPUs over a few hours; domain randomization bridges the sim-to-real gap; models deploy zero-shot to physical robots",
+   "opened": true
+  },
+  {
+   "url": "https://arxiv.org/html/2109.11978v2",
+   "supports": "Thousands of robots learn to walk in parallel inside GPU simulation; robots reset when they fall; sim-to-real domain randomization involves randomizing ground friction, adding noise to sensor observations, and randomly shoving the robots while walking",
+   "opened": true
+  },
+  {
+   "url": "https://www.technologyreview.com/2024/04/30/1091907/the-robot-race-is-fueling-a-fight-for-training-data/",
+   "supports": "Leading humanoid robotics companies like Figure use Nvidia physics simulation; the sim-to-real gap refers to failures that arise when robots move from simulation to the real world",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\":\"robots learn to walk in simulation reinforcement learning sim to real Isaac Gym\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\":\"NVIDIA Isaac Gym \\\"learning to walk in minutes\\\" simulation real world\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\":\"site:spectrum.ieee.org robot learn to walk simulation reinforcement learning \\\"sim-to-real\\\"\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"sim-to-real\\\" robot learn to walk simulation \\\"domain randomization\\\" Isaac Gym\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://developer.nvidia.com/blog/closing-the-sim-to-real-gap-training-spot-quadruped-locomotion-with-nvidia-isaac-lab/\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"sim-to-real\\\" humanoid robot simulation walking reinforcement learning \\\"thousands\\\"\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.figure.ai/news/reinforcement-learning-walking\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"Berkeley\\\" humanoid robot \\\"reinforcement learning\\\" simulation walk \\\"sim-to-real\\\"\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"sim-to-real\\\" humanoid robots simulation walk site:technologyreview.com\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.technologyreview.com/2021/05/27/1025402/bipedal-robots-agility-digit-run-walk-machine-learning-reinforcement/\"}",
+   "ok": false,
+   "error": "the site answered with HTTP 404"
+  },
+  {
+   "n": 11,
+   "name": "web_search",
+   "arguments": "{\"query\":\"site:technologyreview.com \\\"sim-to-real\\\" robot simulation\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.technologyreview.com/2024/04/30/1091907/the-robot-race-is-fueling-a-fight-for-training-data/\"}",
+   "ok": true
+  },
+  {
+   "n": 13,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning\\\" Rudin Hoeller\"}",
+   "ok": true
+  },
+  {
+   "n": 14,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://arxiv.org/html/2109.11978v2\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 14,
+ "model_requests": 15,
+ "usage": {
+  "prompt_tokens": 183348,
+  "completion_tokens": 19051,
+  "reasoning_tokens": 17894,
+  "cost": 0.130514
+ },
+ "seconds_taken": 162.5
+}

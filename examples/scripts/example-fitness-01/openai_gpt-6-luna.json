@@ -1,0 +1,190 @@
+{
+ "task_id": "example-fitness-01",
+ "niche": "fitness and exercise science",
+ "model": "openai/gpt-6-luna",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "Seed oils are toxic and inflammatory.\nOkay, but is that the canola talking, or TikTok?\nMost of this panic comes from omega-6 linoleic acid, common in seed oils.\nYour body can turn it into arachidonic acid, used to make some inflammatory signals.\nSounds scary, until you test it in people.\nA review of 15 controlled trials found no increase in CRP or a long list of inflammatory markers when people ate more linoleic acid.\nThat’s not proof every dose is magic or harmless forever; it means the scary claim isn’t showing up in controlled research.\nFor actual heart outcomes, a Cochrane review of 19 trials and 6,461 adults found no clear reduction in overall cardiovascular events from more omega-6, though cholesterol fell.\nSo seed oil isn’t a superhero.\nBut “toxic” isn’t what the evidence says.\nAlso, the oil isn’t the same thing as the food it comes in.\nSeed oil in a pan isn’t the same package as chips or fast food, which bring calories and all their other ingredients.\nCutting those foods may help, but it doesn’t prove the oil was the villain.\nAnd amount still matters: one tablespoon of canola oil is about 120 calories, so free-pouring adds up if you’re trying to lose fat.\nI’m not calling something healthy just because it isn’t toxic.\nUse an oil you like, watch portions if calories matter, and look at the whole diet.\nThe question isn’t “is seed oil poison?”\nIt’s “what food is it in, how much are you having, and what is it replacing?”",
+ "lines": [
+  "Seed oils are toxic and inflammatory.",
+  "Okay, but is that the canola talking, or TikTok?",
+  "Most of this panic comes from omega-6 linoleic acid, common in seed oils.",
+  "Your body can turn it into arachidonic acid, used to make some inflammatory signals.",
+  "Sounds scary, until you test it in people.",
+  "A review of 15 controlled trials found no increase in CRP or a long list of inflammatory markers when people ate more linoleic acid.",
+  "That’s not proof every dose is magic or harmless forever; it means the scary claim isn’t showing up in controlled research.",
+  "For actual heart outcomes, a Cochrane review of 19 trials and 6,461 adults found no clear reduction in overall cardiovascular events from more omega-6, though cholesterol fell.",
+  "So seed oil isn’t a superhero.",
+  "But “toxic” isn’t what the evidence says.",
+  "Also, the oil isn’t the same thing as the food it comes in.",
+  "Seed oil in a pan isn’t the same package as chips or fast food, which bring calories and all their other ingredients.",
+  "Cutting those foods may help, but it doesn’t prove the oil was the villain.",
+  "And amount still matters: one tablespoon of canola oil is about 120 calories, so free-pouring adds up if you’re trying to lose fat.",
+  "I’m not calling something healthy just because it isn’t toxic.",
+  "Use an oil you like, watch portions if calories matter, and look at the whole diet.",
+  "The question isn’t “is seed oil poison?”",
+  "It’s “what food is it in, how much are you having, and what is it replacing?”"
+ ],
+ "length": {
+  "words": 256,
+  "estimated_seconds": 77.6,
+  "target_seconds": [
+   70,
+   90
+  ],
+  "inside_target": true,
+  "lines": 18,
+  "words_per_line": 14.2,
+  "longest_line_words": 27
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22889633/",
+   "supports": "The proposed omega-6 inflammation mechanism and a systematic review of 15 controlled trials finding no rise in inflammatory markers with increased linoleic acid.",
+   "opened": true
+  },
+  {
+   "url": "https://www.cochrane.org/evidence/CD011094_omega-6-fats-prevent-and-treat-heart-and-circulatory-diseases",
+   "supports": "Review of 19 trials involving 6,461 adults; increasing omega-6 may make little or no difference to cardiovascular events and reduces total cholesterol.",
+   "opened": true
+  },
+  {
+   "url": "https://med.stanford.edu/news/insights/2025/03/5-things-to-know-about-the-effects-of-seed-oils-on-health.html",
+   "supports": "Seed oils are common in processed foods; the health effects of those foods involve their broader calorie and ingredient profile, not necessarily the oil alone.",
+   "opened": true
+  },
+  {
+   "url": "https://www.harvardhealth.org/healthy-aging-and-longevity/expand-your-healthy-cooking-oil-choices",
+   "supports": "A tablespoon of canola oil contains about 120 calories.",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils inflammation randomized controlled trial linoleic acid inflammatory markers systematic review human trials\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\": \"American Heart Association dietary fats seed oils linoleic acid cardiovascular randomized trials\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils health claim ultra processed foods confounding dietary patterns controlled trial\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "web_search",
+   "arguments": "{\"query\": \"Cochrane omega-6 fats cardiovascular outcomes randomized controlled trials linoleic acid\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "web_search",
+   "arguments": "{\"query\": \"seed oils smoke point oxidation cooking health evidence review\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6179509/\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://med.stanford.edu/news/insights/2025/03/5-things-to-know-about-the-effects-of-seed-oils-on-health.html\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://publichealth.jhu.edu/2025/the-evidence-behind-seed-oils-health-effects\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.cochrane.org/evidence/CD011094_omega-6-fats-prevent-and-treat-heart-and-circulatory-diseases\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://professional.heart.org/en/science-news/dietary-fats-and-cardiovascular-disease/top-things-to-know\"}",
+   "ok": true
+  },
+  {
+   "n": 11,
+   "name": "web_search",
+   "arguments": "{\"query\": \"USDA FoodData Central vegetable oil 1 tablespoon 120 calories\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "web_search",
+   "arguments": "{\"query\": \"controlled feeding randomized trial ultra processed diet calorie intake Hall 2019 seed oils calories weight gain\"}",
+   "ok": true
+  },
+  {
+   "n": 13,
+   "name": "web_search",
+   "arguments": "{\"query\": \"Harvard seed oils calories tablespoon 120 calorie cooking oil\"}",
+   "ok": true
+  },
+  {
+   "n": 14,
+   "name": "web_search",
+   "arguments": "{\"query\": \"randomized controlled trials linoleic acid inflammation 15 trials no effect CRP IL-6 2012 systematic review\"}",
+   "ok": true
+  },
+  {
+   "n": 15,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://www.harvardhealth.org/healthy-aging-and-longevity/expand-your-healthy-cooking-oil-choices\"}",
+   "ok": true
+  },
+  {
+   "n": 16,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pubmed.ncbi.nlm.nih.gov/22889633/\"}",
+   "ok": true
+  },
+  {
+   "n": 17,
+   "name": "fetch_page",
+   "arguments": "{\"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7946062/\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 17,
+ "model_requests": 5,
+ "usage": {
+  "prompt_tokens": 72430,
+  "completion_tokens": 4016,
+  "reasoning_tokens": 2824,
+  "cost": 0.005801
+ },
+ "seconds_taken": 61.9
+}

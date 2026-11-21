@@ -1,0 +1,165 @@
+{
+ "task_id": "example-tech-01",
+ "niche": "technology and AI",
+ "model": "google/gemini-4-neon",
+ "model_settings": {
+  "reasoning": {
+   "effort": "high"
+  }
+ },
+ "prompt_version": "2",
+ "harness_version": "0.1",
+ "limits": {
+  "max_tool_calls": 20,
+  "max_model_requests": 30,
+  "max_output_tokens": 40000,
+  "request_timeout_s": 600,
+  "search_results": 5,
+  "page_chars": 20000
+ },
+ "status": "ok",
+ "script": "These robots are learning how to walk before they even exist.\nWhat you're looking at is thousands of virtual robots training inside a physics simulator.\nSee, walking on legs is basically controlled falling.\nInstead of hand-tuning every step, engineers let them learn by trial and error, like a video game.\nEvery time one falls, it resets and tries again, earning rewards for staying upright.\nAnd the crazy part is the speed.\nWith thousands of clones running on GPUs, a four-legged robot learns to walk in minutes.\nHumanoids like Figure 02 pack years of walking into a few hours.\nOf course, there's one big catch.\nReal motors lag, sensors are noisy, and every floor has different grip.\nSo a robot trained in a perfect simulation fails immediately on real hardware.\nHere's the wildest part.\nEngineers intentionally make the simulation chaotic.\nThey randomize friction and weight, and constantly shove the robots.\nSurvive that, and you drop the AI brain onto a real robot and it just walks.\nIn a few years, almost every skill a robot learns will happen in simulation first.\nFollow for more stories on tech, AI, and robotics.",
+ "lines": [
+  "These robots are learning how to walk before they even exist.",
+  "What you're looking at is thousands of virtual robots training inside a physics simulator.",
+  "See, walking on legs is basically controlled falling.",
+  "Instead of hand-tuning every step, engineers let them learn by trial and error, like a video game.",
+  "Every time one falls, it resets and tries again, earning rewards for staying upright.",
+  "And the crazy part is the speed.",
+  "With thousands of clones running on GPUs, a four-legged robot learns to walk in minutes.",
+  "Humanoids like Figure 02 pack years of walking into a few hours.",
+  "Of course, there's one big catch.",
+  "Real motors lag, sensors are noisy, and every floor has different grip.",
+  "So a robot trained in a perfect simulation fails immediately on real hardware.",
+  "Here's the wildest part.",
+  "Engineers intentionally make the simulation chaotic.",
+  "They randomize friction and weight, and constantly shove the robots.",
+  "Survive that, and you drop the AI brain onto a real robot and it just walks.",
+  "In a few years, almost every skill a robot learns will happen in simulation first.",
+  "Follow for more stories on tech, AI, and robotics."
+ ],
+ "length": {
+  "words": 189,
+  "estimated_seconds": 53.7,
+  "target_seconds": [
+   40,
+   60
+  ],
+  "inside_target": true,
+  "lines": 17,
+  "words_per_line": 11.1,
+  "longest_line_words": 17
+ },
+ "format_flags": [],
+ "sources": [
+  {
+   "url": "https://arxiv.org/html/2109.11978v3",
+   "supports": "Thousands of simulated robots training in parallel on a GPU, resetting when they fall, earning rewards during training, a four-legged robot (ANYmal) learning to walk in minutes, and randomizing ground friction and pushing robots in simulation for sim-to-real transfer",
+   "opened": true
+  },
+  {
+   "url": "https://www.figure.ai/news/reinforcement-learning-walking",
+   "supports": "Figure 02 humanoid robots training through trial and error in a GPU-accelerated physics simulator with thousands of virtual robots in parallel, compressing years of walking data into a few hours, randomizing physical properties, friction, and shoves, and transferring policies zero-shot to physical robots",
+   "opened": true
+  },
+  {
+   "url": "https://www.rob.co/resources/knowledge/blog/legged-robots",
+   "supports": "Walking on legs described as controlled falling, shifting from hand-tuned controllers to reinforcement learning with upright rewards, policies trained in a perfect simulation failing immediately on real hardware, floors differing in grip, domain randomization varying mass distribution, friction, and shoves, and policies dropping onto real hardware and working",
+   "opened": true
+  },
+  {
+   "url": "https://claru.ai/glossary/sim-to-real-gap",
+   "supports": "Real-world motor communication latency (lag), sensor noise, and friction differences creating the sim-to-real gap between physics simulators and physical hardware",
+   "opened": true
+  }
+ ],
+ "tool_calls": [
+  {
+   "n": 1,
+   "name": "web_search",
+   "arguments": "{\"query\":\"NVIDIA Isaac Gym OR Isaac Lab humanoid robot learn to walk simulation minutes hours parallel\"}",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"sim-to-real\\\" legged robot walking reinforcement learning domain randomization friction gravity\"}",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "name": "web_search",
+   "arguments": "{\"query\":\"ETH Zurich ANYmal OR Unitree learn to walk in minutes simulation GPU reinforcement learning\"}",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "name": "web_search",
+   "arguments": "{\"query\":\"NVIDIA blog humanoid robot simulation \\\"years of\\\" OR \\\"thousands of\\\" walking Isaac Lab\"}",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"sim-to-real gap\\\" robot walking physics simulation explained friction latency domain randomization\"}",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://arxiv.org/html/2109.11978v3\"}",
+   "ok": true
+  },
+  {
+   "n": 7,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.rob.co/resources/knowledge/blog/legged-robots\"}",
+   "ok": true
+  },
+  {
+   "n": 8,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/\"}",
+   "ok": true
+  },
+  {
+   "n": 9,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://claru.ai/glossary/sim-to-real-gap\"}",
+   "ok": true
+  },
+  {
+   "n": 10,
+   "name": "web_search",
+   "arguments": "{\"query\":\"humanoid robot learn to walk simulation \\\"Isaac Gym\\\" OR \\\"Isaac Lab\\\" \\\"hours\\\" OR \\\"minutes\\\" \\\"thousands\\\"\"}",
+   "ok": true
+  },
+  {
+   "n": 11,
+   "name": "web_search",
+   "arguments": "{\"query\":\"\\\"Unitree\\\" OR \\\"Agility\\\" OR \\\"Figure\\\" humanoid robot trained in simulation before walking real world\"}",
+   "ok": true
+  },
+  {
+   "n": 12,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://www.figure.ai/news/reinforcement-learning-walking\"}",
+   "ok": true
+  },
+  {
+   "n": 13,
+   "name": "fetch_page",
+   "arguments": "{\"url\":\"https://developer.nvidia.com/blog/fast-track-robot-learning-in-simulation-using-nvidia-isaac-lab/\"}",
+   "ok": true
+  }
+ ],
+ "tool_calls_used": 13,
+ "model_requests": 6,
+ "usage": {
+  "prompt_tokens": 93286,
+  "completion_tokens": 21386,
+  "reasoning_tokens": 20352,
+  "cost": 0.476436
+ },
+ "seconds_taken": 213.5
+}
