@@ -1,45 +1,64 @@
 # ShortForm-Bench
 
-ShortForm-Bench measures whether AI models can write short-form video scripts that creators would actually film.
+Can AI models write short-form video scripts that creators would actually film?
 
-25 creators on TikTok and Instagram, five in each of five niches, each have ten video pitches. Every model gets the creator's channel description, ten of their past scripts and one pitch, researches the topic on the web, and writes the script. The creator then reads every model's script blind and decides whether they would film it.
+## The study in brief
 
-This repository holds the code that generates the scripts, the exact prompt, and three example tasks.
+- **Creators.** 25 creators on TikTok and Instagram, five in each of five niches: personal finance and business, technology, fitness, science, and history and culture. Each creator shared their channel description and ten past scripts, and approved ten pitches for their own channel.
+- **Scripts.** Seven models each wrote a script for every pitch: 250 pitches, 1,750 scripts. Every model got the same prompt and the same web search and page reading tools, and was called with the same settings.
+- **Ratings.** Each creator read every script for their pitches blind, rated it 1 to 4, and chose the one they would film.
+- **Accuracy.** Each script's factual claims were checked against the sources it cited, using Claude Opus 5.5.
+
+## Results
+
+Usable rate, the share of scripts a creator rated 3 or 4:
+
+| Model | Usable rate |
+|---|---|
+| Gemini 3.8 Flash | 60% |
+| Claude Fable 5.2 | 53% |
+| Kimi K3.1 Pro | 50% |
+| Claude Haiku 5.5 | 44% |
+| GPT-6.2 Astra | 43% |
+| Gemini 4 Neon | 37% |
+| GPT-6 Luna | 36% |
+
+- The top three are within the margin of error of each other, so the ranking between them is not reliable.
+- Accuracy ranges from 86% to 92%. The model creators approve most often is not the most accurate, so approval and accuracy are measured separately.
+- Creators chose a script to film for 222 of 250 pitches.
+
+## Limits
+
+- **Small panel.** 25 creators, English-language, TikTok and Instagram, educational content only.
+- **One script per pitch.** The uncertainty reflects variation across creators, not the model's own randomness.
+- **Judgements are one person's.** Each creator decides for their own channel, and sub-scores come from the same person as the overall rating.
+- **Automated accuracy check.** It can miss an unsupported claim or flag a supported one.
+- **Drafted inputs.** Channel descriptions and pitches were first drafted from each creator's past videos, then checked and approved by the creator.
+
+Full method and limits are in [PROTOCOL.md](PROTOCOL.md).
 
 ## What is here
 
 | Path | What it is |
 |---|---|
-| `PROTOCOL.md` | The methodology: tasks, rating, scoring and limitations |
-| `harness/` | The generation harness. `harness/README.md` explains how it works and every rule it follows |
-| `harness/prompt.py` | The prompt every model receives, word for word, and the parser for the reply |
-| `harness/tools.py` | The two tools every model gets: web search and page fetch |
-| `harness/config.json` | The models tested, their settings and the limits |
-| `examples/tasks/` | Three real tasks, one each from finance, fitness and technology |
-| `examples/prompts/` | The full prompt a model receives for each example task |
-| `examples/scripts/` | The script each of the seven models wrote for each example task |
+| `PROTOCOL.md` | The method: tasks, ratings, scoring and limitations |
+| `harness/` | The generation harness. `harness/README.md` explains how it works |
+| `harness/prompt.py` | The prompt every model receives, word for word, and the reply parser |
+| `harness/tools.py` | The two tools every model gets: web search and page reading |
+| `harness/config.json` | The models, their settings and the limits |
+| `examples/` | Three example tasks, their prompts, and the script each model wrote for them |
+
+The 250 tasks, the scripts from the full study and the creators' ratings are not published, so models can't be trained on them.
 
 ## Run it
 
-The harness is plain Python 3.10 or later with nothing to install.
-
-Print the prompt for a task:
+The harness needs Python 3.10 or later and no packages. Print the prompt for an example task:
 
 ```bash
 python3 -m harness prompt example-tech-01
 ```
 
-Generate scripts. Models are called through [OpenRouter](https://openrouter.ai), so this needs `OPENROUTER_API_KEY`, and a `TAVILY_API_KEY` for web search:
-
-```bash
-python3 -m harness run --round demo --tasks example-tech-01
-```
-
-Read what came back:
-
-```bash
-python3 -m harness viewer --round demo
-```
+Generating scripts calls models through [OpenRouter](https://openrouter.ai), which needs `OPENROUTER_API_KEY`, and web search needs a search key. See `harness/README.md`.
 
 Run the tests, which need no network or keys:
 
@@ -47,19 +66,14 @@ Run the tests, which need no network or keys:
 python3 -m unittest harness.test_harness
 ```
 
-## How a script is generated
+## Read the write-up
 
-1. The harness builds the prompt from the task.
-2. The model can call `web_search` and `fetch_page`, up to 20 times. Both run in the harness, so every model searches the same index and reads pages through the same reader.
-3. The model replies with a script, written one spoken line per line, and the pages it relied on.
-4. The harness saves the script, every tool call, token counts, cost and timings.
+The full write-up, with the results, charts and methodology, is at https://davidcue.com/shortform-bench/
 
-Every model gets the same prompt, the same tools and the same settings. Each writes one script per task, and the script is never edited before a creator reads it.
+## Cite
 
-## What is not here
-
-The benchmark's 250 tasks, the scripts written for them and the creators' ratings are private, so that models can't be trained on them. The three tasks in `examples/` are published with the creators' permission, and the creators are not named.
+See [CITATION.cff](CITATION.cff), or use GitHub's "Cite this repository" button.
 
 ## Licence
 
-The code is under the MIT licence. The transcripts and scripts in `examples/` are included for illustration and remain the property of the creators; they are not covered by the licence.
+MIT. See [LICENSE](LICENSE).

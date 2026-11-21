@@ -30,7 +30,7 @@ A task is one creator plus one pitch:
 | Tools | Web search and page fetch, the same for every model |
 | Output | A script of spoken lines only, written line by line and sized to the target length, plus the sources it used |
 
-Each pitch is a video idea the creator approved for their own channel and agreed to film.
+Each pitch is a video idea the creator approved for their own channel and agreed to film. The channel description and pitches were first drafted from each creator's past videos, then checked and approved by the creator.
 
 Every model gets the same prompt and the same tools, with up to 20 tool calls per script. Each model writes one script per task.
 
@@ -73,7 +73,9 @@ Two headline numbers are reported per model, with the five sub-scores beside the
 
 **Sub-scores** are each model's average on voice, hook, substance, pacing and originality, worked out per creator and then averaged. They show where a model is strong or weak; they are not combined into one score.
 
-Each number comes with a 95% confidence interval: the range the true value would very likely fall in if the benchmark were rerun with a different set of creators. It is calculated by resampling creators, because scripts judged by the same creator are not independent. With 250 tasks the interval is roughly plus or minus 8 points, so two models whose intervals overlap are not ranked against each other.
+Each score is shown with its standard error: how far it would typically move if the benchmark were rerun with a different set of creators. It is calculated across creators, because scripts judged by the same creator are not independent.
+
+Models are compared on the same creators and pitches. For each pair, the difference in usable rate is worked out creator by creator, which cancels out how tough a creator is and how hard a pitch is. The difference is reported with a 95% confidence interval, and one model is said to be ahead of another only when that interval excludes zero.
 
 The number of usable scripts that were actually filmed and posted is reported alongside.
 
@@ -94,7 +96,7 @@ The tasks, scripts and creator decisions are kept private so models can't be tra
 
 ## Limitations
 
-- **Small panel.** 25 creators is enough to separate models that differ by about 10 points, not by 2 or 3.
+- **Small panel.** 25 creators can separate models that differ by roughly 15 points of usable rate, not by 5. That figure comes from a simulation that assumes creators disagree as much as the first three did.
 - **Words only.** Delivery, visuals and editing are not tested, and some creators teach partly through what is on screen.
 - **Willing creators.** People who agree to take part may be more open to AI scripts than creators in general.
 - **Sub-scores are one person's view.** They come from the same creator who gives the overall rating, so they tend to rise and fall with it. They explain a rating more than they add independent evidence.

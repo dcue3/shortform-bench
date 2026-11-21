@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use ShortForm-Bench, please cite it as below."
+title: "ShortForm-Bench"
+type: dataset
+abstract: "A small benchmark of whether AI models can write short-form video scripts that the creators whose channels they were written for would actually film. 25 creators, 250 pitches, seven models, 1,750 creator-rated scripts."
+authors:
+  - family-names: Cue
+    given-names: David
+version: 1.0.0
+date-released: 2026-11-21
+license: MIT
+repository-code: "https://github.com/dcue3/shortform-bench"
+url: "https://davidcue.com/shortform-bench/"
+keywords:
+  - benchmark
+  - short-form video
+  - scriptwriting
+  - large language models
+  - evaluation
