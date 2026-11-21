@@ -72,6 +72,8 @@ The full write-up, with the results, charts and methodology, is at https://david
 
 ## Cite
 
+DOI: [10.5281/zenodo.24429580](https://doi.org/10.5281/zenodo.24429580) (version 1.0.0, archived on Zenodo).
+
 See [CITATION.cff](CITATION.cff), or use GitHub's "Cite this repository" button.
 
 ## Licence
